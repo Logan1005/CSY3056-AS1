@@ -38,7 +38,7 @@ def assess_mental_health_risk(age, stress, mood, sleep_amount, panic_attacks, mi
         raise ValueError("Number of missed commitments cannot be negative.")
     
     if not isinstance(suicidal_thoughts, bool):
-        raise ValueError("Suicidal thoughts must be Yes/No.")
+        raise ValueError("Suicidal thoughts must be True/False.")
     
     # Risk Assessment Logic:
     # Immediate critical risk if suicidal thoughts are present
@@ -103,12 +103,12 @@ if __name__ == "__main__":
     panic_attacks = int(input("Enter number of panic attacks suffered per week: "))
     missed_commitments = int(input("Enter number of missed commitments per week: "))
     
-    suicial_thoughts_input = input("Does the patient have suicidal thoughts? (yes/no): ").strip().lower()
+    suicial_thoughts_input = input("Does the patient have suicidal thoughts? (true/false): ").strip().lower()
     
-    if suicial_thoughts_input not in ("yes", "no"):
-        raise ValueError("Invalid input for suicidal thoughts. Please enter 'yes' or 'no'.")
+    if suicial_thoughts_input not in ("true", "false"):
+        raise ValueError("Invalid input for suicidal thoughts. Please enter 'true' or 'false'.")
     
-    suicial_thoughts = suicial_thoughts_input.lower() == "yes"
+    suicial_thoughts = suicial_thoughts_input.lower() == "true"
 
     risk = assess_mental_health_risk(age, stress, mood, sleep_amount, panic_attacks, missed_commitments, suicial_thoughts)
     print("Patient's mental health risk assessment result: " + risk)
