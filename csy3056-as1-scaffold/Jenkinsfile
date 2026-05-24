@@ -4,15 +4,19 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                echo 'Installing dependencies'
-                bat 'pip install -r requirements.txt'
+                dir ('csy3056-as1-scaffold') {
+                    echo 'Installing dependencies'
+                    bat 'pip install -r requirements.txt'
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
-                echo 'Running tests'
-                bat 'pytest'
+                dir ('csy3056-as1-scaffold') {
+                    echo 'Running tests'
+                    bat 'pytest'
+                }
             }
         }
     }
