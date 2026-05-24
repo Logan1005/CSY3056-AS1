@@ -76,7 +76,7 @@ def test_oversleep_adds_point():
 
 
 # The test below are designed to fail, to ensure failures are decteted and reported
-"""
+
 def test_fail_low_risk():
     result = assess_mental_health_risk(14, 8, 4, 5, 2, 1, False)
     assert result == "Risk level is Low"
@@ -92,4 +92,4 @@ def test_fail_high_risk():
 def test_fail_critical_risk():
     result = assess_mental_health_risk(24, 3, 7, 9, 0, 0, False)
     assert result == "Risk level is Critical"
- """
+ 
