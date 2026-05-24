@@ -15,7 +15,7 @@ pipeline {
             steps {
                 dir ('csy3056-as1-scaffold') {
                     echo 'Running tests'
-                    bat 'pytest'
+                    bat 'python -m pytest'
                 }
             }
         }
